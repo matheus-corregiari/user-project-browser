@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- ItemProjectView  -->
+    <style name="Project.ItemProjectView">
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="nameTextAppearance">@style/Project.ItemProjectView.NameTextAppearance</item>
+    </style>
+
+    <style name="Project.ItemProjectView.NameTextAppearance" parent="Project.TextAppearance.Large">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

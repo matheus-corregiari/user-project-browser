@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="warningViewStyle" />
+    <declare-styleable name="WarningView">
+        <attr name="title" format="string" />
+        <attr name="subtitle" format="string" />
+        <attr name="actionTitle" format="string" />
+        <attr name="icon" format="reference" />
+        <attr name="titleTextAppearance" format="reference" />
+        <attr name="subtitleTextAppearance" format="reference" />
+        <attr name="iconColor" format="color" />
+    </declare-styleable>
+</resources>

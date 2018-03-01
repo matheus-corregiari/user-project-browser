@@ -1,0 +1,1 @@
+include ':project', ':sdk', ':base', ':base_test'

@@ -1,0 +1,22 @@
+<resources>
+    <!--region Project List -->
+
+    <string name="project_list_empty_title">You don\'t have any projects… Yet!</string>
+    <string name="project_list_empty_subtitle">¯\\_(ツ)_/¯</string>
+
+    <string name="project_list_error_title">Error retrieving your projects…</string>
+    <string name="project_list_error_subtitle">Sorry</string>
+    <string name="project_list_error_action">Try again!</string>
+
+    <!--endregion-->
+
+    <!--region Project Detail -->
+
+    <string name="project_detail_name">Project Detail</string>
+    <string name="project_create_label">Created at:</string>
+    <string name="project_last_update_label">Last updated at:</string>
+    <string name="project_description_label">Description:</string>
+
+    <!--endregion-->
+
+</resources>

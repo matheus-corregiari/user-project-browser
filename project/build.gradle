@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.getkeepsafe.dexcount'
+apply from: "$rootDir/tools/tools.gradle"
+
+final app_name = "User Project Browser"
+
+android {
+
+    defaultConfig {
+        applicationId "br.com.matheus.userprojectbrowser"
+        testInstrumentationRunner "br.com.matheus.userprojectbrowser.CustomTestRunner"
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('../distribution/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+        release {
+            storeFile file('../distribution/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        debug {
+            resValue 'string', 'app_name', app_name + " - Dev"
+
+            signingConfig signingConfigs.debug
+            applicationIdSuffix '.dev'
+            versionNameSuffix '_dev'
+
+            debuggable true
+            testCoverageEnabled true
+        }
+
+        release {
+            resValue 'string', 'app_name', app_name
+
+            signingConfig signingConfigs.release
+
+            debuggable false
+
+            minifyEnabled true
+            useProguard true
+            shrinkResources true
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation project(':base')
+
+    // Testing
+    androidTestImplementation project(':base_test')
+}

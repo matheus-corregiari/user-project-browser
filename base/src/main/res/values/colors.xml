@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Color names based on Sympli -->
+
+    <color name="dark_magenta">#9400a1</color>
+    <color name="purple_heart">#662483</color>
+    <color name="dark_slate_blue">#ff483080</color>
+    <color name="royal_purple">#7259a2</color>
+    <color name="blue_bell">#a795c8</color>
+    <color name="medium_turquoise">#57bfd9</color>
+    <color name="bright_cerulean">#1db0d8</color>
+    <color name="verdigris">#46b6ad</color>
+    <color name="north_texas_green">#1ca33c</color>
+    <color name="android_green">#92be4b</color>
+    <color name="orange_yellow">#facb67</color>
+    <color name="sunglow">#fecc37</color>
+    <color name="harvest_gold">#c49700</color>
+    <color name="sandy_brown">#f29850</color>
+    <color name="cadmium_orange">#ed7c21</color>
+    <color name="raspberry_pink">#e85397</color>
+    <color name="carmine_pink">#e85153</color>
+    <color name="light_carmine_pink">#ec766b</color>
+    <color name="pastel_brown">#736d4b</color>
+    <color name="light_taupe">#a7946d</color>
+    <color name="taupe_gray">#969487</color>
+    <color name="pastel_gray">#d1cabb</color>
+    <color name="off_white">#F0FFFFFF</color>
+
+    <!-- Classic Pallet -->
+    <color name="cerulean_blue">#1e56c9</color>
+    <color name="spiro_disco_ball">#2edef8</color>
+    <color name="dark_pastel_blue">#89a4cf</color>
+    <color name="ferrari_red">#f82c0e</color>
+    <color name="sunglow_light">#fbc739</color>
+    <color name="folly">#ff0052</color>
+    <color name="apple_green">#78be20</color>
+    <color name="munsell">#f3f3f3</color>
+    <color name="platinum">#e5e5e5</color>
+    <color name="manatee">#9e9e9e</color>
+    <color name="trolley_grey">#7f7f7f</color>
+    <color name="old_lavender">#757575</color>
+    <color name="outer_space">#4a4a4a</color>
+    <color name="dark_jungle_green">#212121</color>
+    <color name="unmellow_yellow">#FEFCF1</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="egyptian_blue">#1847a7</color>
+    <color name="true_blue">#0a7edf</color>
+    <color name="dodger_blue">#019af0</color>
+    <color name="yale_blue">#ff143a93</color>
+</resources>

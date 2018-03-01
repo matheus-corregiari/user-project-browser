@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- WarningView  -->
+    <style name="Project.WarningView">
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:gravity">center</item>
+        <item name="titleTextAppearance">@style/Project.WarningView.Title</item>
+        <item name="subtitleTextAppearance">@style/Project.WarningView.Subtitle</item>
+        <item name="iconColor">@color/old_lavender</item>
+    </style>
+
+    <style name="Project.WarningView.Title" parent="Project.TextAppearance.Header">
+        <item name="android:textColor">@color/old_lavender</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Project.WarningView.Subtitle" parent="Project.TextAppearance.Large">
+        <item name="android:textColor">@color/manatee</item>
+    </style>
+
+
+</resources>

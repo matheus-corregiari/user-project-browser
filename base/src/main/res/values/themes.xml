@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="ApplicationTheme" parent="ApplicationTheme.Base" />
+
+    <style name="ApplicationTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/dark_pastel_blue</item>
+        <item name="colorPrimary">@color/cerulean_blue</item>
+        <item name="colorPrimaryDark">@color/dark_jungle_green</item>
+        <item name="colorControlHighlight">@color/platinum</item>
+
+        <item name="android:colorAccent">@color/dark_pastel_blue</item>
+        <item name="android:colorPrimary">@color/cerulean_blue</item>
+        <item name="android:colorPrimaryDark">@color/dark_jungle_green</item>
+        <item name="android:colorControlHighlight">@color/platinum</item>
+
+        <item name="android:windowBackground">@color/munsell</item>
+        <item name="colorControlNormal">@color/munsell</item>
+
+        <item name="toolbarStyle">@style/Project.Toolbar</item>
+        <item name="android:toolbarStyle">@style/Project.Toolbar</item>
+        <item name="android:textViewStyle">@style/Project.TextView</item>
+        <item name="android:buttonStyle">@style/Project.Button</item>
+        <item name="android:buttonStyleSmall">@style/Project.Button.Small</item>
+
+        <item name="warningViewStyle">@style/Project.WarningView</item>
+
+    </style>
+
+    <style name="Project" />
+
+</resources>

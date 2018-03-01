@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "$rootDir/tools/tools.gradle"
+
+android {
+
+    defaultConfig {
+        consumerProguardFiles 'consumer-proguard-rules.pro'
+    }
+
+    def baseUrl = [
+            debug  : '"https://yat.teamwork.com/"',
+            release: '"https://yat.teamwork.com/"'
+    ]
+
+    def credentials = [
+            debug  : [username: '"yat@triplespin.com"',
+                      password: '"yatyatyat27"'
+            ],
+            release: [username: '"yat@triplespin.com"',
+                      password: '"yatyatyat27"'
+            ]
+    ]
+
+    buildTypes {
+        debug {
+            buildConfigField 'String', 'BASE_URL', baseUrl.debug
+            buildConfigField 'String', 'USERNAME', credentials.debug.username
+            buildConfigField 'String', 'PASSWORD', credentials.debug.password
+        }
+
+        release {
+            buildConfigField 'String', 'BASE_URL', baseUrl.release
+            buildConfigField 'String', 'USERNAME', credentials.release.username
+            buildConfigField 'String', 'PASSWORD', credentials.release.password
+        }
+    }
+}
+
+final versions = rootProject.ext
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$versions.gson"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$versions.okHttp"
+    implementation("com.squareup.okhttp3:logging-interceptor:$versions.okHttp") {
+        exclude module: 'okhttp'
+    }
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:$versions.retrofit") {
+        exclude module: 'okhttp'
+    }
+    implementation("com.squareup.retrofit2:converter-gson:$versions.retrofit") {
+        exclude module: 'retrofit'
+        exclude module: 'gson'
+    }
+
+    //Date
+    api "com.jakewharton.threetenabp:threetenabp:$versions.threeTenABP"
+
+    // Log Tracking
+    api "com.jakewharton.timber:timber:$versions.timber"
+
+    // Android Arch
+    api "android.arch.lifecycle:runtime:$versions.arch"
+    api "android.arch.lifecycle:extensions:$versions.arch"
+    kapt "android.arch.lifecycle:compiler:$versions.arch"
+}

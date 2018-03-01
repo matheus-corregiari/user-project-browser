@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "$rootDir/tools/tools.gradle"
+
+android {
+
+    defaultConfig {
+    }
+
+    buildTypes {
+        debug {}
+        release {}
+    }
+}
+
+final versions = rootProject.ext
+
+dependencies {
+
+    api project(':base')
+
+    // Testing
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api "br.com.concretesolutions:kappuccino:$versions.kappuccino"
+
+    api "android.arch.core:core-testing:$versions.arch"
+    api "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+    api "com.android.support.test.espresso:espresso-core:$versions.espresso"
+    api "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+    api "com.android.support.test:runner:$versions.runner"
+    api "com.android.support.test:rules:$versions.rules"
+    api "org.mockito:mockito-android:$versions.mockito"
+    api "com.nhaarman:mockito-kotlin-kt1.1:$versions.mockitoKotlin"
+    api "com.github.tmurakami:dexopener:$versions.dexopener"
+    api "net.vidageek:mirror:$versions.mirror"
+}

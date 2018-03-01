@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".detail.ProjectActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/project_icon"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="@dimen/default_margin"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toTopOf="@+id/label_start"
+                app:layout_constraintEnd_toStartOf="@+id/project_name"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:src="@drawable/ic_error" />
+
+            <TextView
+                android:id="@+id/project_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Project.TextAppearance.Large"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/project_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/project_icon"
+                app:layout_constraintTop_toTopOf="@+id/project_icon"
+                tools:text="PROJECT NAME" />
+
+            <TextView
+                android:id="@+id/label_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/smallest_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:text="@string/project_create_label"
+                android:textAppearance="@style/Project.TextAppearance.Large"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/label_update"
+                app:layout_constraintEnd_toStartOf="@+id/create_date"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/project_icon" />
+
+            <TextView
+                android:id="@+id/label_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/smallest_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:text="@string/project_last_update_label"
+                android:textAppearance="@style/Project.TextAppearance.Large"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/label_description"
+                app:layout_constraintEnd_toStartOf="@+id/last_update_date"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_start" />
+
+            <TextView
+                android:id="@+id/label_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:text="@string/project_description_label"
+                android:textAppearance="@style/Project.TextAppearance.Large"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/project_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_update" />
+
+            <TextView
+                android:id="@+id/create_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:textAppearance="@style/Project.TextAppearance.Large"
+                app:layout_constraintStart_toEndOf="@+id/label_start"
+                app:layout_constraintTop_toTopOf="@+id/label_start"
+                tools:text="12 Jan 2000" />
+
+            <TextView
+                android:id="@+id/last_update_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:textAppearance="@style/Project.TextAppearance.Large"
+                app:layout_constraintStart_toEndOf="@+id/label_update"
+                app:layout_constraintTop_toTopOf="@+id/label_update"
+                tools:text="12 Jan 2000" />
+
+            <TextView
+                android:id="@+id/project_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin"
+                android:textAppearance="@style/Project.TextAppearance.Large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_description"
+                tools:text="I am the bone of my sword
+ Steel is my body and fire is my blood
+ I have created over a thousand blades
+ Unknown to Death,
+ Nor known to Life.
+ Have withstood pain to create many weapons
+ Yet, those hands will never hold anything
+ So as I pray, Unlimited Blade Works." />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

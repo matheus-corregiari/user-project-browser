@@ -1,0 +1,116 @@
+buildscript {
+    ext.kotlin_version = '1.2.21'
+    ext.android_plugin_version = '3.0.1'
+    repositories {
+        jcenter()
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.2'
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+subprojects {
+
+    afterEvaluate {
+
+        if (!android) return
+
+        android {
+            compileSdkVersion 27
+            buildToolsVersion '27.0.3'
+
+            defaultConfig {
+                minSdkVersion 21
+                targetSdkVersion 27
+
+                versionCode 1
+                versionName "1.0"
+
+                resConfigs "en"
+            }
+
+            lintOptions {
+                abortOnError false
+                absolutePaths false
+                disable 'InvalidPackage'
+            }
+
+            aaptOptions {
+                cruncherEnabled = false
+            }
+
+            testOptions {
+                unitTests.returnDefaultValues = true
+                animationsDisabled true
+                execution 'ANDROID_TEST_ORCHESTRATOR'
+            }
+
+            packagingOptions {
+                exclude 'META-INF/LICENSE'
+            }
+
+            sourceSets {
+                main.java.srcDirs += 'src/main/kotlin'
+                test.java.srcDirs += 'src/test/kotlin'
+                androidTest.java.srcDirs += 'src/androidTest/kotlin'
+                androidTest.resources.srcDirs += 'src/androidTest/res'
+            }
+
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+
+        }
+    }
+}
+
+ext {
+
+    // Android
+    androidSupport = '27.1.0'
+    playServices = '11.8.0'
+    constraintLayout = '1.1.0-beta5'
+
+    // Google
+    gson = '2.8.2'
+
+    // Square
+    picasso = '2.5.2'
+    okHttp = '3.9.1'
+    retrofit = '2.3.0'
+    timber = '4.6.0'
+    threeTenABP = '1.0.5'
+
+    // Android Arch
+    arch = '1.1.0'
+
+    // Testing
+    kappuccino = '1.1.0'
+    espresso = "3.0.1"
+    rules = "1.0.1"
+    runner = "1.0.1"
+    mockito = "2.11.0"
+    mockitoKotlin = "1.5.0"
+    dexopener = "0.12.1"
+    mirror = "1.6.1"
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
