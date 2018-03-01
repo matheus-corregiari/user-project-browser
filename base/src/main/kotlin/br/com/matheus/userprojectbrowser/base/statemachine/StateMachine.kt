@@ -7,9 +7,8 @@ import android.os.Bundle
  * This class have the necessary methods to do ViewState transitions
  * Extends this class and implements performChangeState method to make ViewState transitions
  */
+const val STATE_MACHINE_CURRENT_KEY = "STATE_MACHINE_CURRENT_KEY"
 abstract class StateMachine<T> {
-
-    val STATE_MACHINE_CURRENT_KEY = "STATE_MACHINE_CURRENT_KEY"
 
     internal val stateMap = HashMap<Int, T>()
 
@@ -56,7 +55,7 @@ abstract class StateMachine<T> {
         return bundle
     }
 
-    fun add(key: Int, state: T.() -> Unit) = stateMap.put(key, createState().apply { state() })
+    fun add(key: Int, state: T.() -> Unit) = stateMap.put(key, createState().apply(state))
 
     inline fun setup(initialState: Int = -1, restoreState: Bundle? = null, func: StateMachine<T>.() -> Unit) {
         func()

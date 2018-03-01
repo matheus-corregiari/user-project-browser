@@ -1,7 +1,7 @@
 package br.com.matheus.userprojectbrowser.sdk.liveData
 
 import android.arch.lifecycle.LifecycleOwner
-import android.arch.lifecycle.MediatorLiveData
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.support.annotation.WorkerThread
 import br.com.matheus.userprojectbrowser.sdk.async
@@ -13,14 +13,14 @@ import br.com.matheus.userprojectbrowser.sdk.model.type.SUCCESS
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 
-abstract class ResponseLiveData<T> : MediatorLiveData<DataResult<T>>() {
+abstract class ResponseLiveData<T> : LiveData<DataResult<T>>() {
 
     private val computing = AtomicBoolean(false)
     private val computed = AtomicBoolean(false)
 
-    val errorLiveData = MutableLiveData<Throwable>()
+    private val errorLiveData = MutableLiveData<Throwable>()
 
-    val loadingLiveData = MutableLiveData<Boolean>()
+    private val loadingLiveData = MutableLiveData<Boolean>()
 
     fun observeSingle(owner: LifecycleOwner, observer: (data: DataResult<T>) -> Unit) = observeUntil(owner) {
         it.let(observer)
@@ -66,6 +66,10 @@ abstract class ResponseLiveData<T> : MediatorLiveData<DataResult<T>>() {
     fun isComputed() = computed.get()
 
     fun isRunningOrComputed() = computed.get() || computing.get()
+
+    fun getErrorLiveData(): LiveData<Throwable> = errorLiveData
+
+    fun getLoadingLiveData(): LiveData<Boolean> = loadingLiveData
 
     @WorkerThread
     abstract fun compute()

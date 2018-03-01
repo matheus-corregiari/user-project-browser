@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import br.com.matheus.userprojectbrowser.base.picasso.transformation.CircleTransform
 import com.squareup.picasso.Picasso
+import com.squareup.picasso.Transformation
 
 fun View.addStatusBarPadding() {
     setPadding(paddingLeft,
@@ -29,10 +30,10 @@ fun ActionBar?.enableBack() {
     setDisplayShowHomeEnabled(true)
 }
 
-fun ImageView.loadUrl(url: String, @DrawableRes placeholder: Int = 0, @DrawableRes error: Int = placeholder) {
+fun ImageView.loadUrl(url: String, @DrawableRes placeholder: Int = 0, @DrawableRes error: Int = placeholder, transformation: Transformation = CircleTransform()) {
     if (url.isEmpty()) return
     Picasso.with(context).load(url).apply {
-        transform(CircleTransform())
+        transform(transformation)
         if (placeholder > 0) placeholder(placeholder)
         if (error > 0) error(error)
     }.into(this)

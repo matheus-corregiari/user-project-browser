@@ -20,24 +20,8 @@ class ExtraProviderDelegate<out T>(private val extraName: String, private val de
 
 }
 
-class NullableExtraProviderDelegate<out T>(private val extraName: String) {
-
-    private var extraValue: T? = null
-
-    operator fun getValue(thisRef: BaseActivity, property: KProperty<*>): T? {
-        extraValue = getExtra(extraValue, extraName, thisRef)
-        return extraValue
-    }
-
-    operator fun getValue(thisRef: BaseFragment, property: KProperty<*>): T? {
-        extraValue = getExtra(extraValue, extraName, thisRef)
-        return extraValue
-    }
-
-}
-
 fun <T> extraProvider(extra: String, default: T) = ExtraProviderDelegate(extra, default)
-fun <T> extraProvider(extra: String) = NullableExtraProviderDelegate<T>(extra)
+fun extraProvider(extra: String) = extraProvider(extra, null)
 
 @Suppress("UNCHECKED_CAST")
 private fun <T> getExtra(oldExtra: T?, extraName: String, thisRef: BaseActivity): T? =

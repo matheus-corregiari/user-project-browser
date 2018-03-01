@@ -3,10 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UserProjectBrowser.iml" filepath="$PROJECT_DIR$/UserProjectBrowser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserProjectBrowser.iml" filepath="$PROJECT_DIR$/UserProjectBrowser.iml" />
       <module fileurl="file://$PROJECT_DIR$/project/app.iml" filepath="$PROJECT_DIR$/project/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base_test/base_test.iml" filepath="$PROJECT_DIR$/base_test/base_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/base_test/base_test.iml" filepath="$PROJECT_DIR$/base_test/base_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/project/project.iml" filepath="$PROJECT_DIR$/project/project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/project.iml" filepath="$PROJECT_DIR$/project/project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sdk/sdk.iml" filepath="$PROJECT_DIR$/sdk/sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk/sdk.iml" filepath="$PROJECT_DIR$/sdk/sdk.iml" />
     </modules>
   </component>

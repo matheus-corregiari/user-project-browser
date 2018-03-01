@@ -1,4 +1,4 @@
-package br.com.concrete.desafio.statemachine
+package br.com.matheus.userprojectbrowser.base.statemachine
 
 import android.transition.Scene
 import android.transition.Transition

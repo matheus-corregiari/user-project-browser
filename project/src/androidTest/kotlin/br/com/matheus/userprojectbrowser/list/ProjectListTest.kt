@@ -61,6 +61,4 @@ class ProjectListTest : BaseActivityTest<ProjectListActivity>(ProjectListActivit
             projectDetailIsDisplayed()
         }
     }
-
-
 }

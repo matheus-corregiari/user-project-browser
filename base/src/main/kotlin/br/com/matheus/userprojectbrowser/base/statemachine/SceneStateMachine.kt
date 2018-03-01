@@ -2,7 +2,7 @@ package br.com.matheus.userprojectbrowser.base.statemachine
 
 import android.transition.Transition
 import android.transition.TransitionManager.go
-import br.com.concrete.desafio.statemachine.SceneState
+import br.com.matheus.userprojectbrowser.base.statemachine.SceneState
 import br.com.matheus.userprojectbrowser.base.animation.SimpleTransitionListener
 
 /**
@@ -18,13 +18,14 @@ class SceneStateMachine : StateMachine<SceneState>() {
         if (state.transition == null || !attached) {
             state.scene?.enter()
             state.enter?.invoke()
-        } else
+        } else {
             go(state.scene, state.transition?.clone()?.addListener(object : SimpleTransitionListener() {
                 override fun onTransitionEnd(transition: Transition) {
                     state.enter?.invoke()
                     transition.removeListener(this)
                 }
             }))
+        }
     }
 
     override fun createState() = SceneState()

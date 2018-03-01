@@ -27,5 +27,5 @@ dependencies {
     api "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
 
     // Picasso
-    implementation "com.squareup.picasso:picasso:$versions.picasso"
+    api "com.squareup.picasso:picasso:$versions.picasso"
 }

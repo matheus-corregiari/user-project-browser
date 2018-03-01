@@ -21,6 +21,7 @@ private const val SUCCESS_STATE = 0
 private const val LOADING_STATE = 1
 private const val EMPTY_STATE = 2
 private const val ERROR_STATE = 3
+private const val STATE_MACHINE = "STATE_MACHINE"
 
 class ProjectListActivity : BaseActivity() {
 
@@ -86,6 +87,11 @@ class ProjectListActivity : BaseActivity() {
 
     private fun onItemCLick(project: ProjectVO) {
         startActivity(ProjectActivity.intent(this, project))
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBundle(STATE_MACHINE, stateMachine.saveInstanceState())
     }
 
 }

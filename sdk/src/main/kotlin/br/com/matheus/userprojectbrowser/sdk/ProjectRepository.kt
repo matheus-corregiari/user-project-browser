@@ -4,6 +4,8 @@ import br.com.matheus.userprojectbrowser.sdk.data.remote.apiInstance
 
 object ProjectRepository {
 
-    fun listAllProjects() = apiInstance.listProjects()
+    private val allProjectsLiveData = apiInstance.listProjects()
+
+    fun listAllProjects() = allProjectsLiveData
 
 }
